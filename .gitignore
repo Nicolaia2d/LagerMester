@@ -1,33 +1,44 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# Java generelle filer
+*.class
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# Maven build-katalog
+/target/
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+# IntelliJ IDEA spesifikke filer
+/.idea/
+/*.iml
+/.classpath
+/.project
+/.settings/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# OS genererte filer
+.DS_Store
+Thumbs.db
 
-### VS Code ###
-.vscode/
+# Loggfiler
+*.log
+
+# Miljøfiler
+.env
+
+# Test output
+/test-output/
+
+# Spring Boot spesifikke
+*.jar
+*.war
+*.ear
+
+# IDE backupfiler
+*.swp
+*.swo
+
+# Skjule sensitive properties hvis du har
+/src/main/resources/application-local.properties
+/src/main/resources/application-dev.properties
+
+# Docker build output (hvis du senere dockeriserer)
+/docker-output/
+
+# VS Code (hvis noen på teamet bruker det)
+/.vscode/
