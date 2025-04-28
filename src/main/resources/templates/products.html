@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="no" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lageroversikt</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/dashboard">Lagermester</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/products">Lageroversikt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products/add">Legg til produkt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products/update">Oppdater produkt</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Innhold -->
+<div class="container">
+
+    <h1 class="text-center mb-4">📦 Lageroversikt</h1>
+
+    <!-- Søkefelt for filtrering -->
+    <div class="mb-4">
+        <input type="text" id="searchInput" class="form-control" placeholder="Søk etter produktnavn eller SKU...">
+    </div>
+
+    <!-- Produkttabell -->
+    <div class="table-responsive">
+        <table class="table table-hover align-middle" id="productsTable">
+            <thead class="table-light">
+            <tr>
+                <th>SKU</th>
+                <th>Produktnavn</th>
+                <th>Lagerbeholdning</th>
+                <th>Endre antall</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.sku}">SKU</td>
+                <td th:text="${product.name}">Produktnavn</td>
+                <td th:text="${product.quantity}">Antall</td>
+                <td>
+                    <form th:action="@{/products/update}" method="post" class="d-flex">
+                        <input type="hidden" name="sku" th:value="${product.sku}">
+                        <input type="number" name="quantity" min="0" class="form-control form-control-sm me-2" required>
+                        <button type="submit" class="btn btn-sm btn-primary">Oppdater</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- Enkel JavaScript for søkefiltrering -->
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const productsTable = document.getElementById('productsTable').getElementsByTagName('tbody')[0];
+
+    searchInput.addEventListener('keyup', function () {
+        const filter = searchInput.value.toLowerCase();
+        const rows = productsTable.getElementsByTagName('tr');
+
+        for (let row of rows) {
+            const sku = row.cells[0].textContent.toLowerCase();
+            const name = row.cells[1].textContent.toLowerCase();
+
+            if (sku.includes(filter) || name.includes(filter)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

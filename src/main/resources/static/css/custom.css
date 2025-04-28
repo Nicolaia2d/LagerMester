@@ -1,0 +1,18 @@
+body {
+    background-color: #f8f9fa; /* Lys bakgrunn */
+}
+
+h1 {
+    font-weight: bold;
+    color: #343a40; /* Mørk grå overskrift */
+}
+
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Litt skygge på navbar */
+}
+
+.btn-primary {
+    background-color: #0069d9; /* Egen blåfarge */
+    border-color: #0062cc;
+}

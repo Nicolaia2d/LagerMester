@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="no" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppdater produkt</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/dashboard">Lagermester</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/products">Lageroversikt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products/add">Legg til produkt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products/update">Oppdater produkt</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Innhold -->
+<div class="container">
+
+    <h1 class="text-center mb-4">🔄 Oppdater produkt</h1>
+
+    <!-- Skjema for å oppdatere produktets lagerbeholdning -->
+    <form th:action="@{/products/update}" method="post" class="card shadow-sm p-4 bg-white">
+
+        <div class="mb-3">
+            <label for="sku" class="form-label">SKU</label>
+            <input type="text" class="form-control" id="sku" name="sku" placeholder="Skriv inn produktets SKU" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Nytt lagerantall</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Skriv inn nytt antall" min="0" required>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <a href="/dashboard" class="btn btn-secondary">Tilbake</a>
+            <button type="submit" class="btn btn-warning">Oppdater produkt</button>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>

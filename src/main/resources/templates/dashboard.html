@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="no" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lagermester Dashboard</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/dashboard">Lagermester</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/products">Lageroversikt</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/products/add">Legg til produkt</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/products/update">Oppdater produkt</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Innhold -->
+<div class="container text-center">
+
+  <h1 class="mb-4">Velkommen til Lagermester</h1>
+  <p class="lead mb-5">Effektiv lagerstyring gjort enkelt.</p>
+
+  <div class="row justify-content-center g-4">
+
+    <!-- Kort 1: Lageroversikt -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body d-flex flex-column justify-content-center">
+          <h5 class="card-title">📦 Lageroversikt</h5>
+          <p class="card-text">Se alle produkter på lager og beholdning live.</p>
+          <a href="/products" class="btn btn-primary mt-3">Gå til lager</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kort 2: Legg til produkt -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body d-flex flex-column justify-content-center">
+          <h5 class="card-title">➕ Legg til produkt</h5>
+          <p class="card-text">Registrer nye produkter manuelt i systemet.</p>
+          <a href="/products/add" class="btn btn-success mt-3">Legg til nytt</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kort 3: Oppdater produkt -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body d-flex flex-column justify-content-center">
+          <h5 class="card-title">🔄 Oppdater lager</h5>
+          <p class="card-text">Endre antall på eksisterende produkter raskt.</p>
+          <a href="/products/update" class="btn btn-warning mt-3">Oppdater antall</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
