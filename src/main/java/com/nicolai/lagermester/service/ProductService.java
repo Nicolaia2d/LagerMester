@@ -35,4 +35,8 @@ public class ProductService {
         product.setQuantity(newQuantity);
         return productRepository.save(product);
     }
+    public List<Product> searchByName(String query) {
+        return productRepository.findByNameContainingIgnoreCase(query);
+    }
+
 }

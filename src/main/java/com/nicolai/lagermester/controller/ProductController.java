@@ -1,5 +1,6 @@
 package com.nicolai.lagermester.controller;
 
+import com.nicolai.lagermester.dto.ProductDTO;
 import com.nicolai.lagermester.model.Product;
 import com.nicolai.lagermester.service.ProductService;
 import org.springframework.stereotype.Controller;
@@ -31,17 +32,37 @@ public class ProductController {
     public String listProducts(Model model) {
         List<Product> products = productService.getAllProducts(); // Henter alle produkter fra databasen
         model.addAttribute("products", products); // Legger produkter til i modellen for Thymeleaf
-        return "product-list"; // Viser templates/product-list.html
+        return "products"; // Viser templates/product-list.html
     }
 
     /**
      * Oppdaterer lagerbeholdningen på et produkt.
      * POST /products/update
      */
+    @GetMapping("/update")
+    public String showUpdateProductForm() {
+        return "product-update"; // viser templates/product-update.html
+    }
+
     @PostMapping("/update")
     public String updateProduct(@RequestParam String sku, @RequestParam int quantity) {
         productService.updateQuantity(sku, quantity); // Oppdaterer antall i databasen
         return "redirect:/products"; // Etter oppdatering, gå tilbake til produktlisten
+    }
+    @GetMapping("/search")
+    @ResponseBody
+    public List<ProductDTO> searchProducts(@RequestParam("query") String query) {
+        List<Product> matches = productService.searchByName(query);
+        return matches.stream()
+                .map(p -> new ProductDTO(p.getSku(), p.getName()))
+                .toList();
+    }
+
+
+    // Viser skjema for å legge til nytt produkt
+    @GetMapping("/add")
+    public String showAddProductForm() {
+        return "product-add"; // product-add.html
     }
 
     /**

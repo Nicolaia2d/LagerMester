@@ -12,7 +12,31 @@ h1 {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Litt skygge på navbar */
 }
 
-.btn-primary {
-    background-color: #0069d9; /* Egen blåfarge */
-    border-color: #0062cc;
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
 }
+
+.nav-link {
+    color: #333;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    color: #0d6efd;
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.card .display-4 {
+    font-size: 3rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
