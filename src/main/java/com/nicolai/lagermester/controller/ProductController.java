@@ -54,7 +54,7 @@ public class ProductController {
     public List<ProductDTO> searchProducts(@RequestParam("query") String query) {
         List<Product> matches = productService.searchByName(query);
         return matches.stream()
-                .map(p -> new ProductDTO(p.getSku(), p.getName()))
+                .map(p -> new ProductDTO(p.getSku(), p.getName(), p.getThumbnailUrl(), p.getQuantity()))
                 .toList();
     }
 

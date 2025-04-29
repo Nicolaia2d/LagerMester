@@ -15,7 +15,7 @@ public class Product {
 
     private String name;
     private int quantity; // Intern beholdning
-    private String thumbnailUrl; // Nytt felt!
+    private String thumbnailUrl; // Bilde av produktet
 
     // Konstruktører
     public Product() {}
