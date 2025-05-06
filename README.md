@@ -75,21 +75,14 @@ cd Lagermester
 🔄 Integrasjon med Magento
 Applikasjonen henter produktdata fra https://din-butikk.noxxxxxx
 
-Det brukes Bearer Token for autentisering
+Autentisering via Bearer Token
+Produkter som mangler lagerstatus settes til quantity = 0
+Produkter som finnes i Magento, men ikke i intern database, logges som "mangler"
 
-Ved import:
-
-Produkter med manglende lagerstatus blir registrert som 0
-
-Produkter som ikke finnes i systemet logges som "mangler"
-
-Fremtidig støtte for:
-
-Hente ordre automatisk
-
-Tolke e-poster med pakkesedler
-
-Foreslå bestillinger automatisk
+📦 Planlagt videre støtte:
+Automatisk henting og prosessering av ordre
+Parsing av e-poster med pakkesedler
+Forslag til nye innkjøp basert på lagerstatus og utløpsdatoer
 
 
 ## 🧠 Videre utvikling
