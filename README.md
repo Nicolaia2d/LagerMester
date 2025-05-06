@@ -73,11 +73,10 @@ cd Lagermester
 ```
 
 🔄 Integrasjon med Magento
-Applikasjonen henter produktdata fra https://din-butikk.noxxxxxx
-
-Autentisering via Bearer Token
-Produkter som mangler lagerstatus settes til quantity = 0
-Produkter som finnes i Magento, men ikke i intern database, logges som "mangler"
+-Applikasjonen henter produktdata fra https://din-butikk.noxxxxxx
+-Autentisering via Bearer Token
+-Produkter som mangler lagerstatus settes til quantity = 0
+-Produkter som finnes i Magento, men ikke i intern database, logges som "mangler"
 
 📦 Planlagt videre støtte:
 - [ ] Automatisk henting og prosessering av ordre
