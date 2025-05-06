@@ -70,6 +70,7 @@ Prosjektet fokuserer på:
 ```bash
 git clone https://github.com/<brukernavn>/Lagermester.git
 cd Lagermester
+```
 
 🔄 Integrasjon med Magento
 Applikasjonen henter produktdata fra https://din-butikk.noxxxxxx
