@@ -69,3 +69,35 @@ Prosjektet fokuserer på:
 1. **Klon repoet:**
 ```bash
 git clone https://github.com/<brukernavn>/Lagermester.git
+cd Lagermester
+
+🔄 Integrasjon med Magento
+Applikasjonen henter produktdata fra https://din-butikk.noxxxxxx
+
+Det brukes Bearer Token for autentisering
+
+Ved import:
+
+Produkter med manglende lagerstatus blir registrert som 0
+
+Produkter som ikke finnes i systemet logges som "mangler"
+
+Fremtidig støtte for:
+
+Hente ordre automatisk
+
+Tolke e-poster med pakkesedler
+
+Foreslå bestillinger automatisk
+
+
+## 🧠 Videre utvikling
+
+- [ ] 📧 E-post-integrasjon (parse pakkesedler)
+- [ ] 🤖 Automatisk forslag til bestilling
+- [ ] 🔍 Forbedret søk og filter
+- [ ] 🔐 Adminbruker med tilgangsnivåer
+- [ ] 📄 Eksport til PDF / Excel
+- [ ] ⏰ Automatisk cron-jobb for ukentlig e-post med rapport
+- [ ] 📆 Sortering på utløpsdato og antall
+- [ ] 🧠 Bedre kategori- og erstatningslogikk (f.eks. kaffe-typer)
