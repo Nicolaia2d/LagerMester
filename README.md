@@ -80,9 +80,9 @@ Produkter som mangler lagerstatus settes til quantity = 0
 Produkter som finnes i Magento, men ikke i intern database, logges som "mangler"
 
 📦 Planlagt videre støtte:
-Automatisk henting og prosessering av ordre
-Parsing av e-poster med pakkesedler
-Forslag til nye innkjøp basert på lagerstatus og utløpsdatoer
+- [ ] Automatisk henting og prosessering av ordre
+- [ ] Parsing av e-poster med pakkesedler
+- [ ] Forslag til nye innkjøp basert på lagerstatus og utløpsdatoer
 
 
 ## 🧠 Videre utvikling
