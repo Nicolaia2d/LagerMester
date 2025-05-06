@@ -2,6 +2,7 @@
 
 **Effektiv lagerstyring gjort enkelt**  
 En moderne, minimalistisk webapplikasjon for intern lagerkontroll, logging og smart automatisk håndtering av varebeholdning.
+<img width="1898" alt="image" src="https://github.com/user-attachments/assets/47c4d2ae-c47c-45d2-b7ec-f83c1838bc2c" />
 
 ---
 
